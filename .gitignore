@@ -1,0 +1,59 @@
+#Gradle
+*.gradle/
+
+# misc
+.DS_Store
+npm-debug.log
+.vscode/*
+!.vscode/launch.json
+.gitallowed
+.history
+**/pact/**/*.log
+
+# dependencies
+node_modules/
+client/src/App.css
+
+build/
+build/test-results/test/result.xml
+
+# Pact
+client/logs
+client/pacts
+server/logs
+server/pacts
+
+# Tests
+e2etest/reports
+result
+screenshots/
+e2etest/testCafe/screenshots
+test/userJourney/reports/
+
+# IDEs
+.idea
+*.iml
+profile-ui-errors.log
+profile-ui.log
+server/profile-ui-errors.log
+
+# Server logs
+checkout-ui-errors.log
+checkout-ui.log
+
+# Local Certs
+certs/
+
+# Debugs
+.chrome/
+
+# Lerna packages
+lerna-debug.log
+dist
+.npmrc
+client/.npmrc
+server/.npmrc
+server/newrelic_agent.log
+
+#Mocha Awesome report
+mochawesome-report
