@@ -1,5 +1,6 @@
 // https://playwright.dev/docs/pom
 const pageBase = require('../utils/pageBase.js');
+const environmentsUtils = require('../utils/environmentsUtils.js')
 class ProductPage extends pageBase {
 
     //locators on constructor
@@ -86,8 +87,8 @@ class ProductPage extends pageBase {
     }
 
 
-    async navigate(){
-        await super.navigate('app.html'); 
+    async navigateToProductPage(){
+        await super.navigate(environmentsUtils.production.productPage); 
     }
 }
 module.exports = ProductPage;

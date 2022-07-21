@@ -12,14 +12,12 @@ describe(`Product Page happy paths`, () => {
 
     beforeAll(async() => {
 
-        browser = await chromium.launch( /*{headless: false}*/ );
+        browser = await chromium.launch( {headless: false} );
         context = await browser.newContext();
         page = await context.newPage();
 
         productPage = new ProductPage(page);
-
-
-        await page.goto(`http://automationpractice.com/index.php?id_product=3&controller=product`)
+       await productPage.navigateToProductPage();
     })
 
     afterAll( async() =>{

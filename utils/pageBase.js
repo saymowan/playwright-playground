@@ -4,8 +4,9 @@ class pageBase{
         this.page = page;
     }
 
-    async navigate(path){
-        await this.page.goto(`https://demo.applitools.com/${path}`)
+    async navigate(url){
+        await this.page.goto(url);
     }
 }
+
 module.exports = pageBase;
