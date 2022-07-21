@@ -12,19 +12,23 @@ describe(`Product Page happy paths`, () => {
     let context = null;
     let page = null;
 
+    beforeAll(async() => {
 
-    it(`Validate fields displayed after acessing Product Page`, async() =>{
-        //arrange
-        //access url
         browser = await chromium.launch( /*{headless: false}*/ );
         context = await browser.newContext();
         page = await context.newPage();
         await page.goto(`http://automationpractice.com/index.php?id_product=3&controller=product`)
+    })
 
-        
-        //acts
+    afterAll( async() =>{
 
-        //assert
+        await context.close();
+        await browser.close();
+    })
+
+
+    it(`Validate fields displayed after acessing Product Page`, async() =>{
+
         //- Data Sheet
         const dataSheetTable = await page.$(`.table-data-sheet`);
         expect(await dataSheetTable.isVisible()).toBe(true);
@@ -61,10 +65,6 @@ describe(`Product Page happy paths`, () => {
         const reviewsListText = await page.$('#product_comments_block_tab');
         expect(await reviewsListText.isVisible()).toBe(true);
 
-
-        //close browser
-        await context.close();
-        await browser.close();
     })
 
 
